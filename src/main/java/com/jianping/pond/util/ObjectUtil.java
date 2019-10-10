@@ -7,14 +7,13 @@ import java.lang.reflect.Array;
 import java.util.Collection;
 import java.util.Map;
 
+/**
+ * 对象序列化和反序列化工具
+ */
 public class ObjectUtil {
 
         /**
          * 判断对象是否为空
-         * @param o
-         * @return
-         * @author hw
-         * @date 2018年12月11日
          */
         @SuppressWarnings("rawtypes")
         public static boolean isEmpty(Object o) {
@@ -40,10 +39,6 @@ public class ObjectUtil {
 
         /**
          * 将对象序列化
-         * @param o
-         * @return
-         * @author hw
-         * @date 2018年12月14日
          */
         public static byte[] serialize(Object o) throws SysException {
             ObjectOutputStream oos = null;
@@ -62,10 +57,6 @@ public class ObjectUtil {
 
         /**
          * 将对象反序列化
-         * @param byteArr
-         * @return
-         * @author hw
-         * @date 2018年12月14日
          */
         public static Object unSerialize(byte[] byteArr) throws SysException {
             ObjectInputStream ois = null;
@@ -84,9 +75,6 @@ public class ObjectUtil {
 
         /**
          * 关闭对象输出流
-         * @param oos
-         * @author hw
-         * @date 2018年12月14日
          */
         private static void closeObjectOutputStream(ObjectOutputStream oos) throws SysException {
             if (oos != null) {
@@ -101,9 +89,6 @@ public class ObjectUtil {
 
         /**
          * 关闭对象输入流
-         * @param ois
-         * @author hw
-         * @date 2018年12月14日
          */
         private static void closeObjectIutputStream(ObjectInputStream ois) throws SysException {
             if (ois != null) {
