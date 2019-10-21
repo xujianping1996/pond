@@ -1,12 +1,19 @@
 package com.jianping.pond.dao;
 
-import com.jianping.pond.entity.UserInfo;
-import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Repository;
-
-import java.util.List;
+import com.jianping.pond.entity.User;
 
 public interface UserMapper {
-    @Select("select * from user")
-    List<UserInfo> getAllUser();
+    int deleteByPrimaryKey(Integer userId);
+
+    int insert(User record);
+
+    int insertSelective(User record);
+
+    User selectByPrimaryKey(Integer userId);
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
+
+    User getUserByUsername(String username);
 }

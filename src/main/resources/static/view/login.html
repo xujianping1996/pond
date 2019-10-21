@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="loginForm" name="loginForm" action="#" >
+    用户名：<input type="" value="" id="username" name="">
+    密  码：<input type="password" value="" id="password" name="">
+    <button onclick="login()">登录</button>
+</form>
+
+</body>
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function (){
+
+
+    })
+    function login(){
+        $.ajax({
+            url:"/sys/login",
+            type:"post",
+            data:$("loginForm").serialize(),
+            dataType:"json",
+            success:function (data){
+                alert("成功");
+                alert(data);
+            }
+
+        })
+    }
+</script>
+</html>
